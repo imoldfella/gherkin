@@ -40,11 +40,6 @@ public class Test
             // use examples
             Assert.AreEqual(o.first + o.second, o.result);
         }
-
-        using (StreamWriter file = new("gherkin.md"))
-        {
-            GherkinBuilder.build(file, typeof(Test));
-        }
     }
 }
 
@@ -70,11 +65,6 @@ public class Test2
         {
             // use examples
             Assert.AreEqual(o.first + o.second, o.result);
-        }
-
-        using (StreamWriter file = new("gherkin.md"))
-        {
-
         }
     }
 }

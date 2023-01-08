@@ -32,9 +32,18 @@ public class Te : Attribute
 }
 public class GherkinBuilder
 {
+    public static void build(StreamWriter fs)
+    {
+        Assembly currentAssem = Assembly.GetExecutingAssembly();
+        foreach (var o in currentAssem.GetTypes())
+        {
+            build(fs, o);
+        }
+    }
     public static void build(StreamWriter fs, Type t)
     {
         var ca = (Feature?)t.GetCustomAttribute(typeof(Feature), false);
+        if (ca == null) return;
         if (ca != null)
         {
             fs.WriteLine($@"

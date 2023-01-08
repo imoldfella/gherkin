@@ -86,6 +86,7 @@ public class Foo
     {
         var sw = new StreamWriter(Console.OpenStandardOutput());
         sw.AutoFlush = true;
-        GherkinBuilder.build(sw, typeof(Test));
+        GherkinBuilder.build(sw);
+
     }
 }

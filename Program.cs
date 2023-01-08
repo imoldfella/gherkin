@@ -23,27 +23,28 @@ public class Te : Attribute
     public string scenario, given, when, then;
     public Type? example;
 
-    public Te(string feature, string given, string when, string then, Type? example = null)
+    public Te(string scenario, string given, string when, string then, Type? example = null)
     {
-        this.scenario = feature;
+        this.scenario = scenario;
         this.given = given;
         this.when = when;
         this.then = then;
         this.example = example;
     }
 }
-public class LoginExample
+public class AddExample
 {
-    public string user, password;
-    public LoginExample(string user, string password)
+    public double first, second, result;
+    public AddExample(double first, double second, double result)
     {
-        this.user = user;
-        this.password = password;
+        this.first = first;
+        this.second = second;
+        this.result = result;
     }
-    public static LoginExample[] examples()
+    public static AddExample[] examples()
     {
-        return new LoginExample[]{
-            new LoginExample("joe","joe")
+        return new AddExample[]{
+            new AddExample(2,40, 42)
         };
     }
 }
@@ -54,15 +55,19 @@ public class Test
 {
     [TestMethod]
     [TestCategory("sometag")]  // use mstest tag
-    [Te(feature: "feature", given: "given", when: "when", then: "then", example: typeof(LoginExample))]
+    [Te(scenario: "Add two numbers",
+        given: "I have entered <First> in the calculator",
+        when: "I press add AND I have entered <Second> into the calculator",
+        then: "the result should be <Result> on the screen",
+        example: typeof(AddExample))]
     public void test1()
     {
 
-        var ex = LoginExample.examples();
+        var ex = AddExample.examples();
         foreach (var o in ex)
         {
             // use examples
-            System.Console.WriteLine(o.user, o.password);
+
         }
     }
 }

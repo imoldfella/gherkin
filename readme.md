@@ -3,6 +3,18 @@ A proof of concept where Gherkin files are generated from C# attributes.
 The advantage of this approach is combining the strong typing of C# with the documentation of Gherkin. 
 It would probably be better to use a more markdown-ized version of gherkin.
 
+To generate the gherkin from the tests:
+```
+dotnet run
+```
+
+To run the tests
+```
+dotnet test
+```
+
+
+
 Example from specflow
 
 Feature: Calculator
@@ -29,5 +41,5 @@ Examples:
   | 30    | 40     | 70     |
   | 60    | 30     | 90     |
 
-  
+
 

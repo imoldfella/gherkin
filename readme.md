@@ -15,8 +15,9 @@ dotnet test
 
 
 
-Example from specflow
+Example Gherkin from specflow
 
+```
 Feature: Calculator
 
 Simple calculator for adding two numbers
@@ -40,6 +41,6 @@ Examples:
   | 50    | 70     | 120    |
   | 30    | 40     | 70     |
   | 60    | 30     | 90     |
-
+```
 
 

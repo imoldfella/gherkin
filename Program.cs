@@ -74,9 +74,9 @@ public class Foo
 {
     public static void Main()
     {
+        // include a command to document the tests; future work is to generate spreadsheet
         var sw = new StreamWriter(Console.OpenStandardOutput());
         sw.AutoFlush = true;
         GherkinBuilder.build(sw);
-
     }
 }

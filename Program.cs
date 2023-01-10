@@ -14,7 +14,8 @@ public class AddExample
     public static AddExample[] examples()
     {
         return new AddExample[]{
-            new AddExample(2,40, 42)
+            new AddExample(2,40, 42),
+            new AddExample(1,2, 3)
         };
     }
 }

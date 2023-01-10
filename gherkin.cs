@@ -100,8 +100,9 @@ Then: {ax.then}
                                 {
                                     fs.Write($"|{v.GetValue(e)}");
                                 }
+                                fs.WriteLine("|");
                             }
-                            fs.WriteLine("|");
+                         
                         }
                     }
                     else
